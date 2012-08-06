@@ -27,9 +27,9 @@ module SessionsHelper
       redirect_to signin_path, notice: "Please sign in."
     end
   end
-  
+
   def sign_out
-    self.current_user = nil
+    current_user = nil
     cookies.delete(:remember_token)
   end
 
@@ -41,5 +41,4 @@ module SessionsHelper
   def store_location
     session[:return_to] = request.fullpath
   end
-  
 end
